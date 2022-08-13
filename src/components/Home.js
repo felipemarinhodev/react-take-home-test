@@ -1,20 +1,40 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
+import banner from '../images/banner.jpeg'
 
 function Home() {
   return (
-    <Box sx={{ maxWidth: "1024px", width: "100%", margin: "0 auto", py: 5 }}>
-      <Typography variant="h3" sx={{ textAlign: "center", mb: 2 }}>
-        Open Positions
-      </Typography>
-      <Typography
-        sx={{ textAlign: "center", maxWidth: "768px", margin: "0 auto" }}
-      >
-        Our data is training and testing autonomous systems at companies around
-        the world. We're looking for talented visionaries to help us to expand
-        our impact on the way artificial intelligence is developed.
-      </Typography>
-    </Box>
+    <>
+      <div style={
+        {
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundImage: `url(${banner})`,
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+          height: '9rem',
+          width: '100%',
+          fontSize: '2.5rem',
+          fontWeight: 300
+        }
+      }>
+        Join Us
+      </div>
+      <Box sx={{ maxWidth: "1024px", width: "100%", margin: "0 auto", py: 5 }}>
+        <Typography variant="h3" sx={{ textAlign: "center", mb: 2 }}>
+          Open Positions
+        </Typography>
+        <Typography
+          sx={{ textAlign: "center", maxWidth: "768px", margin: "0 auto" }}
+        >
+          Our data is training and testing autonomous systems at companies around
+          the world. We're looking for talented visionaries to help us to expand
+          our impact on the way artificial intelligence is developed.
+        </Typography>
+      </Box>
+    </>
   );
 }
 
