@@ -38,6 +38,9 @@ export function usePositions() {
 	}
 
 	useEffect(() => {
+		if (!response) {
+			return
+		}
 		const filteredPositions = response.filter(position => {
 			if (
 				(!locationSelected || position.categories.location === locationSelected) &&
