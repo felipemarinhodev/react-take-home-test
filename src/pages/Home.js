@@ -40,7 +40,6 @@ function Home() {
           width: '100%',
           fontSize: '2.5rem',
           fontWeight: 300,
-          backgroundColor: 'pink',
         }
       }>
         Join Us
