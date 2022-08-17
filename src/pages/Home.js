@@ -1,26 +1,30 @@
-import React, { useEffect, useState } from "react";
 import { Box, CircularProgress, Typography } from "@mui/material";
-import banner from '../images/banner.jpeg'
-import Positions from './Positions';
+import Filters from 'components/Filters';
+import Positions from 'components/Positions';
+import banner from 'images/banner.jpeg';
+import { memo, useState } from "react";
 
-import { fetchPositions } from '../services/positions';
+import { usePositions } from 'hook/usePositions';
+import { useEffect } from 'react';
 
 function Home() {
 
-  const [positions, setPositions] = useState();
-  const [teams, setTeams] = useState();
   const [loading, setLoading] = useState(true);
+  const {
+    teams,
+    positions,
+    getPositions } = usePositions();
 
   async function init() {
-    const { positionsByTeams, teams: t } = await fetchPositions();
-    setPositions(positionsByTeams)
-    setTeams(t)
-    setLoading(false)
+    getPositions().finally(() => {
+      setLoading(false)
+    })
   }
 
   useEffect(() => {
-    init();
-  }, []);
+    init()
+  }, [])
+
   return (
     <>
       <div style={
@@ -35,7 +39,8 @@ function Home() {
           height: '9rem',
           width: '100%',
           fontSize: '2.5rem',
-          fontWeight: 300
+          fontWeight: 300,
+          backgroundColor: 'pink',
         }
       }>
         Join Us
@@ -55,12 +60,21 @@ function Home() {
           <Box sx={{ display: 'flex', justifyContent: 'center', mt: 10 }}>
             <CircularProgress />
           </Box>
-        ) : Array.from(teams.values()).map(team => (
-          <Positions key={team} team={team} items={positions.get(team)} />
-        ))}
+        ) :
+          <>
+            <Filters />
+            {Array.from(teams.values()).map(team => (
+              positions.get(team).length > 0 && (
+                <Positions
+                  key={team}
+                  team={team}
+                  items={positions.get(team)}
+                />
+              )))}
+          </>}
       </Box>
     </>
   );
 }
 
-export default Home;
+export default memo(Home);
