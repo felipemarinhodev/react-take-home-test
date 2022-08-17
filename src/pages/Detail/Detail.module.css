@@ -1,0 +1,15 @@
+li {
+  line-height: 1.4;
+  margin-bottom: 0.81rem;
+  font-size: 1rem;
+}
+
+.list-detail__header {
+  font-size: 18px;
+}
+
+.detail__describe {
+  font-size: 1rem;
+  margin-bottom: 0.81rem;
+  line-height: 1.4;
+}

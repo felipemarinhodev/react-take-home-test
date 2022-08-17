@@ -21,30 +21,40 @@ const mui = createTheme({
       fontFamily: "Helvetica Neue, Helvetica, Arial, serif",
       fontSize: "2.8rem",
       color: colors.textLight,
-      lineHeight: 1,
-      letterSpacing: "-1px",
-      fontWeight: 500,
+      lineHeight: 1.2,
+      letterSpacing: "-0.75px",
+      fontWeight: 400,
     },
     h2: {
-      fontFamily: "Helvetica Neue, Helvetica, Arial, serif",
       fontSize: "1.8rem",
       color: colors.textLight,
       lineHeight: 1.2,
       letterSpacing: "-0.75px",
     },
     h3: {
-      fontFamily: "Helvetica Neue, Helvetica, Arial, serif",
       fontSize: "1.6rem",
       color: colors.textLight,
       lineHeight: 1.2,
       letterSpacing: "-1px",
     },
     h4: {
-      fontFamily: "Helvetica Neue, Helvetica, Arial, serif",
       fontSize: "1.4rem",
       color: colors.textLight,
       lineHeight: 1.2,
       letterSpacing: "-1px",
+    },
+    h5: {
+      fontSize: "1.2rem",
+      color: colors.textLight,
+      lineHeight: 1.2,
+      letterSpacing: "-1px",
+    },
+    h6: {
+      fontSize: "1.2rem",
+      color: colors.textLight,
+      lineHeight: 1.2,
+      letterSpacing: "2.5px",
+      fontWeight: "700"
     },
     body1: {
       color: colors.textLight,
@@ -53,12 +63,22 @@ const mui = createTheme({
     body2: {
       fontSize: "1rem",
       color: colors.textLight,
+      lineHeight: 1.4,
+      fontWeight: 400,
+      marginBottom: '0.81rem'
     },
     caption: {
       fontWeight: 500,
       letterSpacing: "1px",
       fontSize: "0.6rem",
       lineHeight: 1,
+    },
+    subtitle2: {
+      textTransform: 'uppercase',
+      letterSpacing: "2.5px",
+      fontWeight: 700,
+      lineHeight: 1.57,
+      fontSize: "0.875rem",
     },
   },
   components: {
