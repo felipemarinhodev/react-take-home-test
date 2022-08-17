@@ -63,12 +63,22 @@ const mui = createTheme({
     body2: {
       fontSize: "1rem",
       color: colors.textLight,
+      lineHeight: 1.4,
+      fontWeight: 400,
+      marginBottom: '0.81rem'
     },
     caption: {
       fontWeight: 500,
       letterSpacing: "1px",
       fontSize: "0.6rem",
       lineHeight: 1,
+    },
+    subtitle2: {
+      textTransform: 'uppercase',
+      letterSpacing: "2.5px",
+      fontWeight: 700,
+      lineHeight: 1.57,
+      fontSize: "0.875rem",
     },
   },
   components: {
